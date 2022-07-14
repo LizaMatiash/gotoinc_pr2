@@ -3,9 +3,9 @@
 massive = [1, 1]
 
 loop do
-  break if massive[-1] + massive[-2] > 100
+  break if massive[-2..].sum > 100
 
-  massive << massive[-1] + massive[-2]
+  massive << massive[-2..].sum
 end
 
 puts massive
