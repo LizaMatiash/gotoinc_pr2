@@ -1,9 +1,5 @@
 # frozen_string_literal: true
 
 massive = []
-
-(10..100).each do |x|
-  massive << x if (x % 5).zero?
-end
-
+(10..100).step(5) { |x| massive << x }
 puts massive
