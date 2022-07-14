@@ -26,13 +26,7 @@ month = input_check(message)
 puts message[:enter_year]
 year = input_check(message)
 
-if (year % 4).zero?
-  if (year % 100).zero?
-    day_in_month[2] = 29 if (year % 400).zero?
-  else
-    day_in_month[2] = 29
-  end
-end
+day_in_month[2] = 29 if (year % 4).zero? || (year % 400).zero?
 
 number_of_day = 0
 month.times { |e| number_of_day += day_in_month[e] }
