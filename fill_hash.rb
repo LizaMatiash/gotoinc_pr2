@@ -1,13 +1,5 @@
 # frozen_string_literal: true
 
-vowel_letters = {}
+a = %w[a e u i o y].each_with_object({}) { |v, h| h[v] = ('a'..'z').to_a.index(v) + 1 }
+puts a
 
-white_list = %w[a e u i o y]
-counter = 0
-
-('a'..'z').each do |letter|
-  counter += 1
-  vowel_letters[letter] = counter if white_list.include?(letter)
-end
-
-puts vowel_letters
